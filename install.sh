@@ -1,9 +1,10 @@
 #!/bin/bash
 
 apt update
-apt install -y openjdk-21-jdk
+apt install zip
 
 curl -s "https://get.sdkman.io" | bash
+source "/root/.sdkman/bin/sdkman-init.sh"
 sdk install java 11.0.2-open
 sdk install kotlin
 
