@@ -4,7 +4,7 @@ sudo apt update
 sudo apt install zip
 
 curl -s "https://get.sdkman.io" | bash
-sudo source "/root/.sdkman/bin/sdkman-init.sh"
+source "/home/${USER}/.sdkman/bin/sdkman-init.sh"
 sdk install java 11.0.2-open
 sdk install kotlin
 
