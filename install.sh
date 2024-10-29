@@ -15,16 +15,14 @@ git config --global user.name "Octave"
 echo "=== Display Setup :"
 # Set variables
 XPRA_PORT=14500
-XPRA_BASE_PATH=/@${USER}/clion-gateway.gateway_agent/apps/xpra/
 
-echo "== Starting Xpra server : ${DISPLAY_NUMBER} ${XPRA_PORT} ${XPRA_BASE_PATH}"
+echo "== Starting Xpra server : ${DISPLAY_NUMBER} ${XPRA_PORT}"
 
 # Start XPRA server as the coder user
 xpra start-desktop ${DISPLAY_NUMBER} \
     --bind-tcp=0.0.0.0:${XPRA_PORT} \
     --auth=none \
     --html=on \
-    --http-base-path=${XPRA_BASE_PATH} \
     --tcp-proxy=from \
     --daemon=no \
     --exit-with-client=yes \
