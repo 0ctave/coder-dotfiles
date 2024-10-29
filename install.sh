@@ -11,9 +11,7 @@ sdk install kotlin
 git config --global user.email "octave.boelle@gmail.com"
 git config --global user.name "Octave"
 
-Xvfb :99 -screen 0 1024x768x16 &
+sudo Xvfb :99 -screen 0 1024x768x16 &
 
 # Export the DISPLAY variable
 export DISPLAY=:99
-
-exec "$@"
