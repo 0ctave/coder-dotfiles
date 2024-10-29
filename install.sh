@@ -17,17 +17,18 @@ echo "=== Display Setup :"
 XPRA_PORT=14500
 XPRA_BASE_PATH=/@${USER}/clion-gateway.gateway_agent/apps/xpra/
 
+echo "== Starting Xpra server : ${DISPLAY_NUMBER} ${XPRA_PORT} ${XPRA_BASE_PATH}"
+
 # Start XPRA server as the coder user
-su coder -c "xpra start-desktop $DISPLAY_NUMBER \
- \
-    --bind-tcp=0.0.0.0:$XPRA_PORT \
+xpra start-desktop ${DISPLAY_NUMBER} \
+    --bind-tcp=0.0.0.0:${XPRA_PORT} \
     --auth=none \
     --html=on \
-    --http-base-path=$XPRA_BASE_PATH \
+    --http-base-path=${XPRA_BASE_PATH} \
     --tcp-proxy=from \
     --daemon=no \
     --exit-with-client=yes \
-    --tcp-auth=none &"
+    --tcp-auth=none &
 
 # Export the DISPLAY variable
 export DISPLAY=$DISPLAY_NUMBER
