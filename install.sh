@@ -13,7 +13,14 @@ git config --global user.name "Octave"
 
 
 echo "=== Display Setup :"
-xpra start :100 --bind-tcp=0.0.0.0:14500 --html=on &
+xpra start :100 \
+    --bind-tcp=0.0.0.0:14500 \
+    --html=on \
+    --daemon=no \
+    --exit-with-children \
+    --tcp-auth=none \
+    --pulseaudio=no \
+    --start-child=xterm &
 
 # Export the DISPLAY variable
 export DISPLAY=:100
