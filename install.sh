@@ -14,9 +14,8 @@ git config --global user.name "Octave"
 
 echo "=== Display Setup :"
 # Set variables
-DISPLAY_NUMBER=:100
 XPRA_PORT=14500
-XPRA_BASE_PATH=/@user/clion-gateway.gateway_agent/apps/xpra/
+XPRA_BASE_PATH=/@${USER}/clion-gateway.gateway_agent/apps/xpra/
 
 # Start XPRA server as the coder user
 su coder -c "xpra start-desktop $DISPLAY_NUMBER \
