@@ -32,8 +32,8 @@ xpra start-desktop ${DISPLAY_NUMBER} \
     --tcp-proxy=from \
     --daemon=no \
     --exit-with-client=yes \
+    --socket-dir=$XDG_RUNTIME_DIR \
     --tcp-auth=none &
-    --socket-dir=$XDG_RUNTIME_DIR
     
 # Export the DISPLAY variable
 export DISPLAY=$DISPLAY_NUMBER
