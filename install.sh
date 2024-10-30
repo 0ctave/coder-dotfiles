@@ -34,6 +34,7 @@ xpra start-desktop ${DISPLAY_NUMBER} \
     --exit-with-client=yes \
     --socket-dirs=~/.xpra \
     --socket-dir=~/.xpra \
+    --notifications=no \
     --tcp-auth=none &
 
 # Export the DISPLAY variable
