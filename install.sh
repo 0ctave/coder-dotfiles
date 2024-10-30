@@ -18,6 +18,12 @@ XPRA_PORT=14500
 
 echo "== Starting Xpra server : ${DISPLAY_NUMBER} ${XPRA_PORT}"
 
+XDG_RUNTIME_DIR=~/.xdg
+XAUTHORITY=~/.Xauthority
+
+mkdir -p $XDG_RUNTIME_DIR
+mkdir -p $XAUTHORITY
+
 # Start XPRA server as the coder user
 xpra start-desktop ${DISPLAY_NUMBER} \
     --bind-tcp=0.0.0.0:${XPRA_PORT} \
@@ -27,6 +33,7 @@ xpra start-desktop ${DISPLAY_NUMBER} \
     --daemon=no \
     --exit-with-client=yes \
     --socket-dirs=~/.xpra \
+    --socket-dir=~/.xpra \
     --tcp-auth=none &
 
 # Export the DISPLAY variable
