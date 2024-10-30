@@ -24,6 +24,9 @@ XAUTHORITY=~/.Xauthority
 mkdir -p $XDG_RUNTIME_DIR
 mkdir -p $XAUTHORITY
 
+# Export the DISPLAY variable
+export DISPLAY=$DISPLAY_NUMBER
+
 # Start XPRA server as the coder user
 xpra start-desktop ${DISPLAY_NUMBER} \
     --bind-tcp=0.0.0.0:${XPRA_PORT} \
@@ -35,8 +38,7 @@ xpra start-desktop ${DISPLAY_NUMBER} \
     --socket-dirs=~/.xpra \
     --socket-dir=~/.xpra \
     --notifications=no \
-    --tcp-auth=none &
+    --tcp-auth=none
 
-# Export the DISPLAY variable
-export DISPLAY=$DISPLAY_NUMBER
+
 
