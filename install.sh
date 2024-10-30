@@ -38,7 +38,7 @@ xpra start-desktop ${DISPLAY_NUMBER} \
     --socket-dirs=~/.xpra \
     --socket-dir=~/.xpra \
     --notifications=no \
-    --tcp-auth=none
+    --tcp-auth=none &
 
 
 
