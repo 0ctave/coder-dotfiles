@@ -26,6 +26,7 @@ xpra start-desktop ${DISPLAY_NUMBER} \
     --tcp-proxy=from \
     --daemon=no \
     --exit-with-client=yes \
+    --socket-dirs=~/.xpra \
     --tcp-auth=none &
 
 # Export the DISPLAY variable
