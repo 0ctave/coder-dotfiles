@@ -4,7 +4,7 @@ sudo apt update
 sudo apt install zip
 
 curl -fsSL https://deno.land/install.sh | sh
-export PATH="/home/${USER}/.deno/bin:$PATH"
+echo "export PATH=\"/home/${USER}/.deno/bin:$PATH\"" >> ~/.bashrc
 
 deno install npm:pnpm
 
