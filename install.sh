@@ -13,8 +13,7 @@ sudo apt update && sudo apt install --no-install-recommends yarn
 
 curl -fsSL https://deno.land/install.sh | sh
 
-curl -fsSL https://get.pnpm.io/install.sh | sh -
-
+wget -qO- https://get.pnpm.io/install.sh | ENV="$HOME/.profile" SHELL="$(which bash)" bash -
 
 git config --global user.email "octave.boelle@gmail.com"
 git config --global user.name "Octave"
